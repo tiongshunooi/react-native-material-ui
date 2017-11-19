@@ -52,13 +52,17 @@ const contextTypes = {
 
 function getStyles(props, context) {
     const { bottomNavigationAction } = context.uiTheme;
-
     const local = {};
 
+    // console.log(bottomNavigationAction)
+    // bottomNavigationAction.labelActive = bottomNavigationAction.label
+
     if (props.active) {
-        local.container = bottomNavigationAction.containerActive;
+        // local.container = bottomNavigationAction.containerActive;
+        local.container = undefined
         local.icon = bottomNavigationAction.iconActive;
-        local.label = bottomNavigationAction.labelActive;
+        // local.label = bottomNavigationAction.labelActive;
+        local.label = {color:'#4BAF50'}
     }
 
     if (!props.label) {

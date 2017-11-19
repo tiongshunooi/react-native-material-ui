@@ -46,7 +46,7 @@ class DialogDefaultActions extends PureComponent {
         const styles = getStyles(this.props, this.context);
 
         return (
-            <View style={styles.defaultActionsContainer}>
+            <View style={styles.defaultActionsContainer} >
                 {actions.map(action => (
                     <Button
                         key={action}

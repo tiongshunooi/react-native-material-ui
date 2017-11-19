@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved, import/extensions */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, Animated, Easing, StyleSheet } from 'react-native';
+import { Platform, Animated, Easing, StyleSheet, View } from 'react-native';
 import { ViewPropTypes } from '../utils';
 /* eslint-enable import/no-unresolved, import/extensions */
 
@@ -104,13 +104,15 @@ class BottomNavigation extends PureComponent {
                     }],
                 }]}
             >
+              <View style={{flex:1, flexDirection: 'row', justifyContent:'center'}}>
                 {React.Children.map(
                     children,
                     child => React.cloneElement(child, {
                         ...child.props,
-                        active: child.key === active,
+                        active: child.props.active,
                     }),
                 )}
+              </View>
             </Animated.View>
         );
     }

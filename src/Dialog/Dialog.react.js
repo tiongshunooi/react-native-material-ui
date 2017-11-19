@@ -36,15 +36,14 @@ function getStyles(props, context) {
 class Dialog extends PureComponent {
     render() {
         const { onPress, children } = this.props;
-
         const styles = getStyles(this.props, this.context);
 
         return (
-            <RippleFeedback onPress={onPress}>
-                <View style={styles.container}>
-                    {children}
-                </View>
-            </RippleFeedback>
+          <RippleFeedback onPress={onPress} >
+              <View style={styles.container}>
+                  {children}
+              </View>
+          </RippleFeedback>
         );
     }
 }
